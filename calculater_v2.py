@@ -33,3 +33,5 @@ while True:
   choice = input().lower()
   if choice != "y":
     break
+print("hello")
+print("hello sir")
