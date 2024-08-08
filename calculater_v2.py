@@ -1,76 +1,76 @@
 import  math
+import logging
+logging.basicConfig(level=logging.INFO)
 
-
-total=0
 
 """taking user choice to do any calculation"""
-print(f"\t\ttotal={total}\n")
-choice=int(input("1.mul\n2.add\n3.sub\n4.dev\n5.sqr\n6.sqrt\n7.exit\n\nEnter choice:"))
 
-if 0<=choice<=4:
-    a=int(input("enter 1st num:"))
-    b=int(input("enter 2st num:"))
-if 5<=choice<=6:
-    c=int(input("enter num:"))
+def two_degit_calulation():
+    logging.debug("two degit calculation func start")
+    choice=int(input("1.mul\n2.add\n3.sub\n4.dev\n5.sqr\n6.sqrt\nEnter choice:"))
 
+    if 0<=choice<=4:
+        a=int(input("enter 1st num:"))
+        b=int(input("enter 2st num:"))
+    if 5<=choice<=6:
+        c=int(input("enter num:"))
 
-if choice==1:
-    total=a*b
-    print(f"\n\t\ttotal={total}\n")
+    if choice==1:
+        result=a*b
+        
+    if choice==2:
+        result=a+b
+        
+    if choice==3:
+        result=a-b
+        
+    if choice==4:
+        result=a/b
+
+    if choice==5:
+        result=c*c
+
+    if choice==6:
+        result=math.sqrt(c)
     
-if choice==2:
-    total=a+b
-    print(f"\n\t\ttotal={total}\n")
-    
-if choice==3:
-    total=a-b
-    print(f"\n\t\ttotal={total}\n")
-    
-if choice==4:
-    total=a/b
-    print(f"\n\t\ttotal={total}\n")
+    logging.debug("two degit calculation func end")
+    return result
 
-if choice==5:
-    total=c*c
-    print(f"\n\t\ttotal={total}\n")
 
-if choice==6:
-    total=math.sqrt(c)
-    print(f"\n\t\ttotal={total}\n")
-    
+result=two_degit_calulation()
+logging.info(f"\n\t\ttotal={result}\n")
+
 while True:
     """taking user choice to add more calculation"""
-    choice=int(input("1.mul with total\n2.add num in total\n3.sub num in total\n4.dev total by a num\n5.sqr of total\n6.sqrt of total\n7.exit and calculate new num\n\nEnter choice to make calculation with total:"))
+    choice=int(input("1.mul with result\n2.add num in result\n3.sub num in result\n4.dev result by a num\n5.sqr of result\n6.sqrt of result\n7.calculate new numbers\n8.exit\nEnter choice to make calculation with result:"))
     
 
     if choice==1:
-        d=int(input(f"{total}\n*"))
-        total=total*d
-        print(f"\n\t\ttotal={total}\n")
+        d=int(input(f"{result}\n*"))
+        result=result*d
     
     if choice==2:
-        d=int(input(f"{total}\n+"))
-        total=total+d
-        print(f"\n\t\ttotal={total}\n")
+        d=int(input(f"{result}\n+"))
+        result=result+d
         
     if choice==3:
-        d=int(input(f"{total}\n-"))
-        total=total-d
-        print(f"\n\t\ttotal={total}\n")
+        d=int(input(f"{result}\n-"))
+        result=result-d
         
     if choice==4:
-        d=int(input(f"{total}\n/"))
-        total=total/d
-        print(f"\n\t\ttotal={total}\n")
+        d=int(input(f"{result}\n/"))
+        result=result/d
 
     if choice==5:
-        total=total*total
-        print(f"\n\t\tsquare of total is {total}\n")
+        result=result*result
 
     if choice==6:
-        total=math.sqrt(total)
-        print(f"\n\t\tsquareroot of total is {total}\n")
+        result=math.sqrt(result)
     
     if choice==7:
+        result=two_degit_calulation()
+        
+    if choice==8:
         break
+    logging.info(f"\n\t\t result={result}\n")
 
