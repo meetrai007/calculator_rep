@@ -9,11 +9,16 @@ logging.basicConfig(level=logging.INFO)
 def two_degit_calulation():
     """taking user choice to do any calculation with two num"""
     logging.debug("two degit calculation func start")
-    choice = int(input("1.mul\n2.add\n3.sub\n4.dev\n5.sqr\n6.sqrt\nEnter choice:"))
-
+    try:
+        choice = int(input("1.mul\n2.add\n3.sub\n4.dev\n5.sqr\n6.sqrt\nEnter choice:"))
+    except:
+        print("choose a valid operation in integer 1-6")
+        two_degit_calulation()
+    # if 0 <= choice <= 6:
     if 0 <= choice <= 4:
         a = int(input("enter 1st num:"))
         b = int(input("enter 2st num:"))
+
     if 5 <= choice <= 6:
         c = int(input("enter num:"))
 
@@ -34,9 +39,13 @@ def two_degit_calulation():
 
     if choice == 6:
         result = math.sqrt(c)
-
+    
     logging.debug("two degit calculation func end")
     return result
+
+    # else:
+    #     print("enter valid operation between 1-6")
+    #     two_degit_calulation()
 
 
 result = two_degit_calulation()
