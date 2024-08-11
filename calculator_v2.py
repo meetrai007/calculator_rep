@@ -11,37 +11,40 @@ def two_degit_calulation():
     logging.debug("two degit calculation func start")
     try:
         choice = int(input("1.mul\n2.add\n3.sub\n4.dev\n5.sqr\n6.sqrt\nEnter choice:"))
+        
+        # if 0 <= choice <= 6:
+        if 0 <= choice <= 4:
+            a = int(input("enter 1st num:"))
+            b = int(input("enter 2st num:"))
+
+        if 5 <= choice <= 6:
+            c = int(input("enter num:"))
+
+        if choice == 1:
+            result = a * b
+
+        if choice == 2:
+            result = a + b
+
+        if choice == 3:
+            result = a - b
+
+        if choice == 4:
+            result = a / b
+
+        if choice == 5:
+            result = c * c
+
+        if choice == 6:
+            result = math.sqrt(c)
+        
+
+        
+        logging.debug("two degit calculation func end")
+        return result
     except:
         print("choose a valid operation in integer 1-6")
         two_degit_calulation()
-    # if 0 <= choice <= 6:
-    if 0 <= choice <= 4:
-        a = int(input("enter 1st num:"))
-        b = int(input("enter 2st num:"))
-
-    if 5 <= choice <= 6:
-        c = int(input("enter num:"))
-
-    if choice == 1:
-        result = a * b
-
-    if choice == 2:
-        result = a + b
-
-    if choice == 3:
-        result = a - b
-
-    if choice == 4:
-        result = a / b
-
-    if choice == 5:
-        result = c * c
-
-    if choice == 6:
-        result = math.sqrt(c)
-    
-    logging.debug("two degit calculation func end")
-    return result
 
     # else:
     #     print("enter valid operation between 1-6")
@@ -63,8 +66,10 @@ while True:
                 7.calculate new numbers
                 8.exit
             """)
-    choice2 = int(input("Enter choice to make calculation with result:"))
-
+    try:
+        choice2 = int(input("Enter choice to make calculation with result:"))
+    except:
+        print("Enter valid operation between 1-8")
     if choice2 == 1:
         d = int(input(f"{result}\n*"))
         result = result * d
