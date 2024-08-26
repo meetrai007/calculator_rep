@@ -81,7 +81,7 @@ b = Button(root, text="0", width=8, height=2)
 b.grid(row=4, column=2, padx=10, pady=10)
 b.bind("<Button-1>", click)
 
-b = Button(root, text="%", width=8, height=2)
+b = Button(root, text="^", width=8, height=2)
 b.grid(row=4, column=3, padx=10, pady=10)
 b.bind("<Button-1>", click)
 
